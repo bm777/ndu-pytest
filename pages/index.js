@@ -105,10 +105,10 @@ export default function Home() {
             Here we go!
           </h1>
 
-          {/* ---------------------------------------------------------------------------------- */}
-          <p className="text-green-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-10"> 
+          {/* ----------------------------------------A----------------------------------------- */}
+          <p className="text-blue-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-10"> 
             a. Test a simple function without parameter
-            <p className="text-green-500 font-mono text-lg tracking-tight text-center"> 
+            <p className="text-gray-500 font-mono text-lg tracking-tight text-center"> 
               The logic with pytest, we should add test_ to the name of function we want to test.
             </p>
           </p>
@@ -124,7 +124,7 @@ export default function Home() {
                       </div>
                   </div>
                   <div className=" border-gray-400 overscroll-x-auto">
-                        <p className="font-mono text-green-400 ml-0">def add_a_b():</p>
+                        <p className="font-mono text-blue-400 ml-0">def add_a_b():</p>
                         <p className="font-mono text-slate-400 ml-10">a = 2</p>
                         <p className="font-mono text-slate-400 ml-10">b = 3</p>
                         <p className="font-mono text-green-400 ml-10">return a + b</p>
@@ -140,7 +140,7 @@ export default function Home() {
                       </div>
                   </div>
                   <div className=" border-gray-400">
-                        <p className="font-mono text-green-400 ml-0">def test_add_a_b():</p>
+                        <p className="font-mono text-blue-400 ml-0">def test_add_a_b():</p>
                         <p className="font-mono text-slate-400 ml-10">result = add_a_b()</p>
                         <p className="font-mono text-slate-400 ml-10">expected = 5</p>
                         <p className="font-mono text-red-400 ml-10">assert result == expected , "Not equal"</p>
@@ -148,10 +148,10 @@ export default function Home() {
               </div>
           </div>
           {/* ---------------------------------------------------------------------------------- */}
-          {/* ---------------------------------------------------------------------------------- */}
+          {/* --------------------------------------B------------------------------------------- */}
           <p className="text-purple-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-20"> 
             b. Test a function with parameter(s)
-            <p className="text-purple-500 font-mono text-lg tracking-tight text-center"> 
+            <p className="text-gray-500 font-mono text-lg tracking-tight text-center"> 
               Now we will take parameters to testing, we will test the output type, and the output value. 
               <br/>
               There is no one way to test, we just apply the logic that come in your mind.
@@ -198,10 +198,10 @@ export default function Home() {
               </div>
           </div>
           {/* ---------------------------------------------------------------------------------- */}
-          {/* ---------------------------------------------------------------------------------- */}
+          {/* -------------------------------------C-------------------------------------------- */}
           <p className="text-pink-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-20"> 
             c. Test a function which take object as parameter
-            <p className="text-pink-500 font-mono text-lg tracking-tight text-center"> 
+            <p className="text-gray-500 font-mono text-lg tracking-tight text-center"> 
               Now we will take an object as parameter to testing, we will test the output type, and the output value. 
             </p>
           </p>
@@ -277,7 +277,158 @@ export default function Home() {
           </div>
           {/* ---------------------------------------------------------------------------------- */}
 
+          {/* -----------------------------------D---------------------------------------------- */}
+          <p className="text-amber-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-20"> 
+            d. Test a function with @pytest.mark.parametrize
+            <p className="text-gray-500 font-mono text-lg tracking-tight flex text-center max-w-6xl ml-auto mr-auto"> 
+              This allow you to control the output while having a possiblity to give inputs.
+              Here we will control the models size with expected size. The syntax of that decorator, 
+              is @pytest.mark.parametrize("val,expected", [(1,2)]), you may add 'exception' after 'expected' to raise Error.
+              The tuple (1, 2) is [val,expected] value resp. 
+            </p>
+          </p>
+          
+          <div className=" gap-10 flex justify-center bg-[#121635]">
+
+              <div className="w-2/5 rounded-xl border border-[#282E44] bg-slate-900 mt-10">
+                  <div className="h-7 bg-slate-900 rounded-t-xl border border-[#282E44]">
+                      <div className="flex justify-start gap-1 mt-2 ml-2">
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      </div>
+                  </div>
+                  <div className=" border-gray-400 overscroll-x-auto">
+                        <p className="font-mono text-slate-400 ml-0 mb-5">import random</p>
+                        <p className="font-mono text-amber-400 ml-0">def get_random_models(n):</p>
+                        <br/>
+                        <p className="font-mono text-slate-400 ml-10">models = ["cnn", "vgg16", "ssd", "yolov4", "yolov5"]</p>
+                        <p className="font-mono text-slate-400 ml-10">_models = []</p>
+                        <p className="font-mono text-slate-400 ml-10">_len = len(_models)</p>
+                        <p className="font-mono text-slate-400 ml-10">while _len {"<"} n:</p>
+                        <p className="font-mono text-slate-400 ml-20">model =  random.choice(models)</p>
+                        <p className="font-mono text-slate-400 ml-20">if model not in _models:</p>
+                        <p className="font-mono text-slate-400 ml-32">_models.append(model)</p>
+                        <p className="font-mono text-green-400 ml-10">return _models</p>
+                  </div>
+              </div>
+
+              <div className="w-2/5 rounded-xl border border-[#282E44] bg-slate-900 mt-10">
+                  <div className="h-7 bg-slate-900 rounded-t-xl border border-[#282E44]">
+                      <div className="flex justify-start gap-1 mt-2 ml-2">
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      </div>
+                  </div>
+                  <div className=" border-gray-400">
+                        <p className="font-mono text-slate-400 ml-0 mb-5">import pytest</p>
+                        <p className="font-mono text-amber-400 ml-0">@pytest.mark.parametize(</p>
+                        <p className="font-mono text-slate-400 ml-10">"number,expected,exception",</p>
+                        <p className="font-mono text-slate-400 ml-10">[</p>
+                        <p className="font-mono text-slate-400 ml-20">{"# wrong input number < 1"}</p>
+                        <p className="font-mono text-slate-400 ml-20">(-1, None, ValueError),</p>
+                        <p className="font-mono text-slate-400 ml-20">(0, 0, None),</p>
+                        <p className="font-mono text-slate-400 ml-20">(1, 1, None),</p>
+                        <p className="font-mono text-slate-400 ml-20">(2, 2, None),</p>
+                        <p className="font-mono text-slate-400 ml-20">(3, 3, None),</p>
+                        <p className="font-mono text-slate-400 ml-20">(8, None, ValueError),</p>
+                        <p className="font-mono text-slate-400 ml-10">] )</p>
+                        <p className="font-mono text-amber-400 ml-0">def test_get_random_models(number, expected, exception)</p>
+                        <p className="font-mono text-slate-400 ml-10">all_models = ["cnn", "vgg16", "ssd", "yolov4", "yolov5"]</p>
+                        <p className="font-mono text-slate-400 ml-10">picked_models = get_random_models(number)</p>
+                        <p className="font-mono text-slate-400 ml-10">if exception:</p>
+                        <p className="font-mono text-red-400 ml-20">pytest.raises(ValueError, match="input value must be withing 1 & 5")</p>
+                        <p className="font-mono text-slate-400 ml-10">else:</p>
+                        <p className="font-mono text-slate-400 ml-20">result = all([True if m in all_models else False for m in picked_models])</p>
+                        <p className="font-mono text-red-400 ml-20">assert result, "Wrong model loaded or picked"</p>
+                  </div>
+              </div>
+          </div>
+          {/* ---------------------------------------------------------------------------------- */}
+          {/* -------------------------------------E-------------------------------------------- */}
+          <p className="text-sky-500 font-semibold text-2xl sm:text-xl lg:text-3xl tracking-tight text-center mt-20"> 
+            e. Test a function with hypothesis decorator.
+            <p className="text-gray-500 font-mono text-lg tracking-tight text-center"> 
+              This give you possibility to wide range of input to test.
+              <br/>
+              You should install hypothesis.
+            </p>
+          </p>
+          {/* ---------------------------------------------------------------------------------- */}
+          <div className="w-2/5 rounded-xl border border-[#282E44] bg-slate-900 mx-auto ">
+              <div className="h-7 bg-slate-900 rounded-t-xl border border-[#282E44]">
+                  <div className="flex justify-start gap-1 mt-2 ml-2">
+                      <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                  </div>
+              </div>
+              <div className="h-10 border-gray-400">
+                  <h1 className="text-[#5B9CBF] py-2 ml-10 font-mono">
+                    pip install hypothesis
+                  </h1>
+              </div>
+          </div>
+
+          <div className=" gap-10 flex justify-center bg-[#121635]">
+
+              <div className="w-2/5 rounded-xl border border-[#282E44] bg-slate-900 mt-10">
+                  <div className="h-7 bg-slate-900 rounded-t-xl border border-[#282E44]">
+                      <div className="flex justify-start gap-1 mt-2 ml-2">
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      </div>
+                  </div>
+                  <div className=" border-gray-400 overscroll-x-auto">
+                        <p className="font-mono text-slate-400 ml-0 mb-5">import random</p>
+                        <p className="font-mono text-sky-400 ml-0">def get_random_models(n):</p>
+                        <br/>
+                        <p className="font-mono text-slate-400 ml-10">models = ["cnn", "vgg16", "ssd", "yolov4", "yolov5"]</p>
+                        <p className="font-mono text-slate-400 ml-10">_models = []</p>
+                        <p className="font-mono text-slate-400 ml-10">_len = len(_models)</p>
+                        <p className="font-mono text-slate-400 ml-10">while _len {"<"} n:</p>
+                        <p className="font-mono text-slate-400 ml-20">model =  random.choice(models)</p>
+                        <p className="font-mono text-slate-400 ml-20">if model not in _models:</p>
+                        <p className="font-mono text-slate-400 ml-32">_models.append(model)</p>
+                        <p className="font-mono text-green-400 ml-10">return _models</p>
+                  </div>
+              </div>
+
+              <div className="w-2/5 rounded-xl border border-[#282E44] bg-slate-900 mt-10">
+                  <div className="h-7 bg-slate-900 rounded-t-xl border border-[#282E44]">
+                      <div className="flex justify-start gap-1 mt-2 ml-2">
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                          <div className="h-3 w-3 rounded-full bg-[#424D60]"></div>
+                      </div>
+                  </div>
+                  <div className=" border-gray-400">
+                        <p className="font-mono text-slate-400 ml-0">import pytest</p>
+                        <p className="font-mono text-slate-400 ml-0 mb-5">from hypothesis import given, strategies as st</p>
+                        <p className="font-mono text-sky-400 ml-0">@given(st.integers())</p>
+                        <p className="font-mono text-sky-400 ml-0">def test_get_random_models(number)</p>
+                        <p className="font-mono text-slate-400 ml-10">all_models = ["cnn", "vgg16", "ssd", "yolov4", "yolov5"]</p>
+                        <p className="font-mono text-slate-400 ml-10">picked_models = get_random_models(number)</p>
+                        <p className="font-mono text-slate-400 ml-10">{"if number > 0:"}</p>
+                        <p className="font-mono text-slate-400 ml-20">result = all([True if m in all_models else False for m in picked_models])</p>
+                        <p className="font-mono text-red-400 ml-20">assert result, "Wrong model loaded or picked"</p>
+                        <p className="font-mono text-red-400 ml-20">assert len(picked_models) == number, "the length doesn't match"</p>
+                        <p className="font-mono text-slate-400 ml-10">else:</p>
+                        <p className="font-mono text-red-400 ml-20">pytest.raises(ValueError, match="input value must positive")</p>
+                  </div>
+              </div>
+          </div>
+          
+          {/* ---------------------------------------------------------------------------------- */}
+
+
       </div>
+      <br/>
+      <p className="text-center font-mono text-slate-400 mt-20">Designed with love & the code is available</p>
+      <a href="https://dagshub.com/bm777/ndu-pytest"><p className="text-center font-mono text-purple-400">@DagsHub</p></a>
+      
       
     </div>
     
