@@ -227,11 +227,11 @@ export default function Home() {
                         <p className="font-mono text-slate-400 ml-20">state = True</p>
                         <p className="font-mono text-slate-400 ml-20">if self.n {"<="} 1 or self.n == 4:</p>
                         <p className="font-mono text-slate-400 ml-32">state = False</p>
-                        <p className="font-mono text-slate-400 ml-20">elif number == 2 or number == 3:</p>
+                        <p className="font-mono text-slate-400 ml-20">elif self.n == 2 or self.n == 3:</p>
                         <p className="font-mono text-slate-400 ml-32">state = True</p>
                         <p className="font-mono text-slate-400 ml-20">else:</p>
-                        <p className="font-mono text-slate-400 ml-32">for i in range(2, int(number/2)):</p>
-                        <p className="font-mono text-slate-400 ml-44">if number % i == 0:</p>
+                        <p className="font-mono text-slate-400 ml-32">for i in range(2, int(self.n/2)):</p>
+                        <p className="font-mono text-slate-400 ml-44">if self.n % i == 0:</p>
                         <p className="font-mono text-slate-400 ml-52">state = False</p>
                         <p className="font-mono text-slate-400 ml-52">break</p>
                         <p className="font-mono text-green-400 ml-20">return state</p>
@@ -254,7 +254,7 @@ export default function Home() {
                         <p className="font-mono text-slate-400 ml-10">instance = Number(val)</p>
                         <p className="font-mono text-slate-400 ml-10">expected = Number</p>
                         <p className="font-mono text-red-400 ml-10">assert type(instance) == Number, "Did not got Number class"</p>
-                        <p className="font-mono text-red-400 ml-10">assert instance.number == val, "different from 888"</p>
+                        <p className="font-mono text-red-400 ml-10">assert instance.n == val, "different from 888"</p>
                         <br/>
                         <p className="font-mono text-pink-400 ml-0">def test_prime():</p>
                         <p className="font-mono text-slate-400 ml-10">values = [7, 1001]</p>
